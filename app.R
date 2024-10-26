@@ -1,6 +1,6 @@
 library(shiny)
 
-source("R/ui.R")
-source("R/server.R")
+source("dashboard/ui.R")
+source("dashboard/server.R")
 
 shinyApp(ui = ui, server = server)
