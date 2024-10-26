@@ -33,10 +33,7 @@ add_marker <- function(row, map_obj) {
 }
 
 # Fonction pour créer la carte
-create_map <- function() {
-  
-  # Récupérer les données
-  avg_taxiout_by_airport <- read_csv('data/clean/avg_taxiout_by_airport.csv')
+create_map <- function(data) {
   
   # Créer une carte centrée sur les États-Unis
   map_center <- c(39.8283, -98.5795)  # Coordonnées du centre des États-Unis
@@ -45,8 +42,8 @@ create_map <- function() {
     addTiles()  # Ajouter le fond de carte
   
   # Ajouter tous les marqueurs
-  for (i in 1:nrow(avg_taxiout_by_airport)) {
-    m <- add_marker(avg_taxiout_by_airport[i, ], m)
+  for (i in 1:nrow(data)) {
+    m <- add_marker(data[i, ], m)
   }
   # Ajouter un titre à la carte
   title_html <- '
@@ -70,10 +67,6 @@ create_map <- function() {
     </div>
   '
   m <- m %>% addControl(html = legend_html, position = "bottomleft", layerId = "legend")
-  
-  # Sauvegarde la carte sous format HTML
-  saveWidget(m, file = 'dashboard/map.html', selfcontained = TRUE)
+
 }
 
-# Exemple d'utilisation de la fonction
-create_map()  # Décommenter pour créer la carte

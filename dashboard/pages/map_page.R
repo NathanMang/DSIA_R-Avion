@@ -3,6 +3,6 @@
 mapPage <- function() {
   fluidPage(
     titlePanel("Carte interactive"),
-    p("map")
+    leafletOutput("map")
   )
 }
