@@ -1,4 +1,5 @@
 # map_page.R
+library(leaflet)
 
 mapPage <- function() {
   fluidPage(
