@@ -1,5 +1,4 @@
-# ui.R
-library(dplyr)
+# ui.R  
 
 # Importer le contenu de chaque page
 source("dashboard/pages/home_page.R")

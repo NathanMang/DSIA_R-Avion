@@ -2,11 +2,14 @@
 
 library(ggplot2)
 
-histogram <- function(input, output) {
-  output$histPlot <- renderPlot({
-    ggplot(data.frame(value = faithful[[input$variable]]), aes(x = value)) +
-      geom_histogram(binwidth = 5, fill = "skyblue", color = "white") +
-      labs(title = paste("Histogramme de la variable :", input$variable),
-           x = input$variable, y = "Fréquence")
-  })
+create_histogram <- function(data, input) {
+  
+  # Filtre les données pour des retards supérieurs à 15 min
+  data_filtered <- data[data[[input]]>15,]
+  
+  ggplot(data_filtered, aes(x=Airline)) +
+    geom_bar(colour="black", fill="purple") +
+    ggtitle(paste("Distribution des retards par compagnie aérienne (", input, ")")) +
+    xlab("Compagnies Aériennes") +
+    ylab("Nombre d'occurrences")
 }
