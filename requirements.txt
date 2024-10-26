@@ -1,0 +1,5 @@
+tidyverse
+shiny
+gaminder
+dplyr
+ggplot2
