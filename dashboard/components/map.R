@@ -45,18 +45,10 @@ create_map <- function(data) {
   for (i in 1:nrow(data)) {
     m <- add_marker(data[i, ], m)
   }
-  # Ajouter un titre à la carte
-  title_html <- '
-    <div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); 
-                 background-color: white; border-radius: 4px; padding: 5px; 
-                 box-shadow: 0 0 5px rgba(0,0,0,0.5); z-index: 9999;">
-      <strong>Temps moyen nécessaire pour décoller après l\'embarquement total par aéroport</strong>
-    </div>
-  '
-  m <- m %>% addControl(html = title_html, position = "topleft", layerId = "title")
+
   # Ajouter une légende
   legend_html <- '
-    <div style="position: fixed; bottom: 50px; left: 50px; width: 160px; height: auto;
+    <div style="position: fixed; bottom: 50px; left: 40px; width: 160px; height: auto;
                  border:2px solid grey; z-index:9999; font-size:14px; background-color:white;
                  padding:10px; opacity: 0.9;">
       <b>Légende</b><br>

@@ -1,5 +1,6 @@
 # ui.R  
 
+
 # Importer le contenu de chaque page
 source("dashboard/pages/home_page.R")
 source("dashboard/pages/histogram_page.R")

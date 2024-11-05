@@ -1,21 +1,26 @@
-# histogram_page.R
+library(shiny)
+library(ggplot2)
 
+# Fonction pour créer le layout de l'histogramme
 histogramPage <- function() {
   fluidPage(
     titlePanel("Histogramme"),
+    
     sidebarLayout(
       sidebarPanel(
         selectInput("variable", "Sélectionner un type de retard :", 
                     choices = c("Compagnie (CarrierDelay)" = "CarrierDelay",
                                 "Météo (WeatherDelay)" = "WeatherDelay",
-                                "Système national d\'aviation (NASDelay)" = "NASDelay",
+                                "Système national d'aviation (NASDelay)" = "NASDelay",
                                 "Sécurité (SecurityDelay)" = "SecurityDelay",
                                 "Retard de l'avion (LateAircraftDelay)" = "LateAircraftDelay")
-        ),
+        )
       ),
+      
       mainPanel(
         plotOutput("histPlot")
       )
     )
   )
 }
+
