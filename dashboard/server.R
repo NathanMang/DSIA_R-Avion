@@ -15,7 +15,7 @@ server <- function(input, output) {
     Flight_Delay <- read.csv("data/clean/Flight_Delay_Clean.csv")
     
     # Appeler la fonction pour générer l'histogramme
-    create_histogram(Flight_Delay_Clean, input$variable)
+    create_histogram(Flight_Delay, input$variable)
     
   })
   
