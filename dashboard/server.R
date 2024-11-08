@@ -1,42 +1,61 @@
 # server.R
 
-
 library(shiny)
 library(readr)
 library(ggplot2)
+library(dplyr)
 
 # Chargement des fichiers
-source("dashboard/components/histogram.R")  # Fichier contenant la fonction de création de l'histogramme dynamique
-source("dashboard/components/histogram2.R") # Fichier contenant la fonction de création de l'histogramme statique
-source("dashboard/components/map.R")        # Fichier contenant la fonction de création de la carte
+source("dashboard/components/histogram_arr_delay.R")  # Histogramme dynamique pour le retard à l'arrivée
+source("dashboard/components/histogram.R")            # Histogramme dynamique par type de retard
+source("dashboard/components/histogram2.R")           # Histogramme statique pour les types de retards
+source("dashboard/components/map.R")                  # Carte
 
 # Définition de la logique du serveur
 server <- function(input, output) {
   
-  # Créer l'output 'histplot' qui contient l'histogramme dynamique
-  output$histPlot <- renderPlot({
+  # Histogramme dynamique pour le retard à l'arrivée
+  output$histPlot1 <- renderPlot({
     
-    # Charge nos données nettoyées pour l'histogramme
+    # Charger les données
     Flight_Delay <- read.csv("data/clean/Flight_Delay_Clean.csv")
     
-    # Génère l'histogramme dynamique
-    create_histogram(Flight_Delay, input$variable)  # Prend en paramètre l'input 'variable', qui correspond au type de délai dans notre menu déroulant
+    # Appliquer la plage de retard sélectionnée par les curseurs
+    min_delay <- input$min_delay
+    max_delay <- input$max_delay
     
+    # Générer l'histogramme avec la plage de retard sélectionnée
+    create_histogram_arrival_delay(Flight_Delay, min_delay, max_delay)
   })
   
-  # Créer l'output 'histplot2' qui contient l'histogramme statique
+  # Histogramme dynamique par type de retard (en fonction de la sélection de l'utilisateur)
   output$histPlot2 <- renderPlot({
     
-    # Charge nos données nettoyées pour l'histogramme
+    # Charger les données
     Flight_Delay <- read.csv("data/clean/Flight_Delay_Clean.csv")
     
-    # Génère l'histogramme statique
-    create_histogram2(Flight_Delay)
-    
+    # Générer l'histogramme en fonction du type de retard sélectionné
+    create_histogram(Flight_Delay, input$variable)  # `input$variable` correspond au type de retard choisi
   })
   
-  # Texte de l'histogramme dynamique
+  # Histogramme statique pour la distribution des types de retards
+  output$histPlot3 <- renderPlot({
+    
+    # Charger les données
+    Flight_Delay <- read.csv("data/clean/Flight_Delay_Clean.csv")
+    
+    # Générer l'histogramme statique
+    create_histogram2(Flight_Delay)
+  })
+  
+  # Texte pour l'histogramme de la plage de retards d'arrivée
   output$histPlotText1 <- renderText({
+    paste("Cet histogramme montre la distribution des retards d'arrivée pour les vols ayant des retards entre",
+          input$min_delay, "et", input$max_delay, "minutes, avec plus de 1000 occurrences.")
+  })
+  
+  # Texte pour l'histogramme dynamique par type de retard
+  output$histPlotText2 <- renderText({
     paste("Cet histogramme montre le nombre d'occurrences des retards aériens en fonction de la compagnie et du type de retard sélectionné. 
           Le dataset contient uniquement des vols ayant subi des retards en 2019, et pour cette visualisation, seuls les vols ayant eu des retards supérieurs à 15 minutes ont été retenus. 
           Cela signifie que chaque barre représente le nombre de retards significatifs pour chaque compagnie aérienne. 
@@ -44,21 +63,20 @@ server <- function(input, output) {
           Utilisez le menu déroulant pour changer le type de retard affiché.")
   })
   
-  # Texte de l'histogramme statique
-  output$histPlotText2 <- renderText({
+  # Texte pour l'histogramme statique
+  output$histPlotText3 <- renderText({
     paste("Cet histogramme illustre le nombre d'occurrences pour chaque type de retard aérien, en mettant l'accent sur les retards supérieurs à 15 minutes. 
-    Cet histogramme a été créé pour permettre une visualisation claire et rapide des retards aériens par type, afin de mieux comprendre les différentes causes des retards. \n 
+    Cet histogramme a été créé pour permettre une visualisation claire et rapide des retards aériens par type, afin de mieux comprendre les différentes causes des retards. 
     En observant les données, on peut noter une disparité significative entre les types de retards.")
   })
   
-  # Créer l'output 'map' qui contient la carte
+  # Carte des retards moyens par aéroport
   output$map <- renderLeaflet({
     
-    # Charge nos données nettoyées pour la carte
+    # Charger les données
     avg_taxiout_by_airport <- read_csv('data/clean/avg_taxiout_by_airport.csv')
     
-    # Génère la carte
+    # Générer la carte
     create_map(avg_taxiout_by_airport)
   })
-  
 }

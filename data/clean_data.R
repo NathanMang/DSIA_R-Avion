@@ -12,7 +12,7 @@ clean_data <- function() {
   df_flight_delay <- df_flight_delay %>%
     drop_na() %>%
     select(CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, 
-           LateAircraftDelay, Airline, TaxiOut, Origin)
+           LateAircraftDelay, Airline, TaxiOut, Origin, ArrDelay)
   
  
   # Enregistrement des données nettoyées
