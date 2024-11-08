@@ -1,5 +1,7 @@
 tidyverse
 shiny
-gaminder
 dplyr
 ggplot2
+readr
+leaflet
+htmlwidgets
