@@ -9,7 +9,7 @@ histogramPage <- function() {
   fluidPage(
     
     # Titre de la page
-    titlePanel("Histogramme"),
+    titlePanel(""),
     
     # Disposition de la page avec une barre latérale et une zone principale
     sidebarLayout(
@@ -32,7 +32,11 @@ histogramPage <- function() {
         plotOutput("histPlot2"),      # Affiche l'histogramme statique associé à l'output histplot2
         textOutput("histPlotText2"),  # Affiche le texte associé à l'output histPlotText2
       )
-    )
+    ),
+    
+    # Footer
+    div("© 2024 - Dashboard des Retards Aériens - Mang Nathan & Ludovic Viellard", 
+        style = "text-align: center; color: #777; font-size: 14px; margin-top: 50px;"),
   )
 }
 

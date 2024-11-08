@@ -6,10 +6,10 @@ library(leaflet)
 
 # Définition du contenu de la page de la carte
 create_map_layout <- function() {
-  layout <- fluidPage(
+  fluidPage(
     
     # Titre de la page
-    titlePanel("Page de la Carte"),
+    titlePanel(""),
     
     # Sous-titre de la page
     h2("Temps moyen pour décoller après embarquement total par aéroport (TaxiOut)",
@@ -26,7 +26,7 @@ create_map_layout <- function() {
         style = "text-align: center; color: #555; font-size: 16px; margin: 0 auto; width: 80%;"),
     
     # Footer
-    div("© 2024 - Dashboard de Retards Aériens - Mang Nathan & Ludovic Viellard", 
+    div("© 2024 - Dashboard des Retards Aériens - Mang Nathan & Ludovic Viellard", 
         style = "text-align: center; color: #777; font-size: 14px; margin-top: 50px;"),
     
     # Style de la page
