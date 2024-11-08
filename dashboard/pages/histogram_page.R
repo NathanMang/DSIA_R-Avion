@@ -8,7 +8,11 @@ histogramPage <- function() {
   fluidPage(
     
     # Titre de la page
-    titlePanel("Dashboard des Retards Aériens"),
+    titlePanel(""),
+    
+    # Sous-titre de la page
+    h2("Dashboard des Retards Aériens",
+       style = "text-align: center; color: #0056b3; margin-bottom: 30px;"),
     
     # Disposition de la page avec une barre latérale et une zone principale
     sidebarLayout(
@@ -20,14 +24,18 @@ histogramPage <- function() {
         sliderInput("min_delay", "Retard minimum (minutes) :", min = 0, max = 120, value = 15, step = 5),
         sliderInput("max_delay", "Retard maximum (minutes) :", min = 15, max = 120, value = 30, step = 5),
         
-       
+        div(style = "margin-top: 350px;"),
+        
         # Menu déroulant pour sélectionner le type de retard
         selectInput("variable", "Sélectionner un type de retard :", 
                     choices = c("Compagnie (CarrierDelay)" = "CarrierDelay",
                                 "Météo (WeatherDelay)" = "WeatherDelay",
                                 "Système national d'aviation (NASDelay)" = "NASDelay",
                                 "Sécurité (SecurityDelay)" = "SecurityDelay",
-                                "Retard de l'avion (LateAircraftDelay)" = "LateAircraftDelay"))
+                                "Retard de l'avion (LateAircraftDelay)" = "LateAircraftDelay")),
+        
+        div(style = "margin-top: 1025px;")
+        
       ),
       
       # Zone principale de la page

@@ -7,8 +7,8 @@ library(dplyr)
 
 # Chargement des fichiers
 source("dashboard/components/histogram_arr_delay.R")  # Histogramme dynamique pour le retard à l'arrivée
-source("dashboard/components/histogram.R")            # Histogramme dynamique par type de retard
-source("dashboard/components/histogram2.R")           # Histogramme statique pour les types de retards
+source("dashboard/components/histogram_airline.R")    # Histogramme dynamique par type de retard
+source("dashboard/components/histogram_type_delay.R") # Histogramme statique pour les types de retards
 source("dashboard/components/map.R")                  # Carte
 
 # Définition de la logique du serveur
@@ -35,7 +35,7 @@ server <- function(input, output) {
     Flight_Delay <- read.csv("data/clean/Flight_Delay_Clean.csv")
     
     # Générer l'histogramme en fonction du type de retard sélectionné
-    create_histogram(Flight_Delay, input$variable)  # `input$variable` correspond au type de retard choisi
+    create_histogram_airline(Flight_Delay, input$variable)  # `input$variable` correspond au type de retard choisi
   })
   
   # Histogramme statique pour la distribution des types de retards

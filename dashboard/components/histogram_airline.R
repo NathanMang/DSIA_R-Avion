@@ -4,7 +4,7 @@
 library(ggplot2)
 
 # Fonction de création de l'histograme dynamique
-create_histogram <- function(Flight_Delay_Clean, input) {
+create_histogram_airline <- function(Flight_Delay_Clean, input) {
   
   # Filtrer les données 
   data_filtered <- Flight_Delay_Clean %>%

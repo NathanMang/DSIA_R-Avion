@@ -17,11 +17,5 @@ create_histogram_arrival_delay <- function(data, min_delay, max_delay) {
     ggtitle(paste("Distribution des retards d'arrivée (", min_delay, "à", max_delay, "minutes)")) +
     xlab("Retard à l'arrivée (minutes)") +
     ylab("Nombre d'occurrences") +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    theme_minimal()
 }
-
-# Exemple d'utilisation
-# Assurez-vous de charger le fichier CSV dans le dataframe 'data' avant d'appeler la fonction.
-# data <- read.csv('data/clean/Flight_Delay_Clean.csv')
-# create_histogram_arrival_delay(data, 15, 30)

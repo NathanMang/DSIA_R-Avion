@@ -26,11 +26,11 @@ ui <- navbarPage("",
                  ),
                  
                  # Création de la page d'accueil
-                 tabPanel("Home", homePage()),
+                 tabPanel("Accueil", homePage()),
                  
                  # Création de la page des histogrammes
-                 tabPanel("Histogram", histogramPage()),
+                 tabPanel("Histogramme", histogramPage()),
                  
                  # Création de la page de la carte
-                 tabPanel("Map", mapPage())
+                 tabPanel("Carte", mapPage())
 )

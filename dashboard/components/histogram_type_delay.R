@@ -3,8 +3,8 @@
 
 library(tidyverse)
 
-# Fonction de création de l'histogramme statique
-create_histogram2 <- function(Flight_Delay_Clean) {
+# Fonction de création de l'histogramme statique 
+create_histogram_type_delay <- function(Flight_Delay_Clean) {
   
   # Colonnes choisies
   delay_types <- c('CarrierDelay', 'WeatherDelay', 'NASDelay', 'SecurityDelay', 'LateAircraftDelay')
