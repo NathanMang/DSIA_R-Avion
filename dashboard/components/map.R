@@ -1,13 +1,16 @@
+# map.R
+
+
 # Chargement des bibliothèques nécessaires
 library(tidyverse)
-library(leaflet)
-library(htmlwidgets)
+library(leaflet)      # Librairie pour créer des cartes interactives
+library(htmlwidgets)  # Permet d'intégrer des objets interactifs dans des widgets HTML
 
 # Fonction pour ajouter un marqueur à la carte
 add_marker <- function(row, map_obj) {
   
   # Définir la couleur du marqueur en fonction du délai
-  taxi_out <- row$TaxiOut
+  taxi_out <- row$TaxiOut # Récupération de la valeur
   color <- case_when(
     taxi_out < 15 ~ "green",
     taxi_out < 20 ~ "yellow",
@@ -17,19 +20,19 @@ add_marker <- function(row, map_obj) {
   
   # Ajouter un marqueur à la carte
   map_obj <- addCircleMarkers(
-    map = map_obj,
-    lng = row$LONGITUDE,
-    lat = row$LATITUDE,
+    map = map_obj,          # Notre carte
+    lng = row$LONGITUDE,    # Coordonnée longitude du marqueur
+    lat = row$LATITUDE,     # Coordonnée latitude du marqueur
     radius = taxi_out / 2,  # Taille du cercle proportionnelle au temps de taxiOut
-    color = color,
-    fill = TRUE,
-    fillColor = color,
-    fillOpacity = 0.6,
-    label = paste(row$Origin, ": ", taxi_out, " min", sep = ""),
-    popup = paste(row$Origin, ": ", taxi_out, " min", sep = "")
+    color = color,          # Couleur du marqueur
+    fill = TRUE,            # Remplissage du marqueur
+    fillColor = color,      # Couleur de remplissage
+    fillOpacity = 0.6,      # Transparence du marqueur
+    label = paste(row$Origin, ": ", taxi_out, " min", sep = ""),  # Label du marqueur
+    popup = paste(row$Origin, ": ", taxi_out, " min", sep = "")   # Popup du marqueur
   )
   
-  return(map_obj)
+  return(map_obj) # Retourne la carte mise à jour avec le marqueur
 }
 
 # Fonction pour créer la carte
@@ -46,7 +49,7 @@ create_map <- function(data) {
     m <- add_marker(data[i, ], m)
   }
 
-  # Ajouter une légende
+  # Créer une légende
   legend_html <- '
     <div style="position: fixed; bottom: 50px; left: 40px; width: 160px; height: auto;
                  border:2px solid grey; z-index:9999; font-size:14px; background-color:white;
@@ -58,6 +61,8 @@ create_map <- function(data) {
       <i style="background:red;width:20px;height:20px;border-radius:50%;display:inline-block;"></i> Plus de 30 min<br>
     </div>
   '
+  
+  # Ajoute la légende
   m <- m %>% addControl(html = legend_html, position = "bottomleft", layerId = "legend")
 
 }

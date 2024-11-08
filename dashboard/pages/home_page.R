@@ -1,11 +1,14 @@
 # home_page.R
-library(shiny)
-library(htmltools)
 
-# Fonction pour créer la page d'accueil avec des éléments stylisés et animés
+
+library(shiny)
+
+# Définition du contenu de la page d'accueil
 create_home_layout <- function() {
   
+  # Conteneur principal de la page d'accueil
   tags$div(
+    
     # En-tête
     tags$h1("Bienvenue sur le Dashboard de Retards Aériens",
             style = "text-align: center; color: #007BFF; margin-bottom: 20px; font-family: Arial, sans-serif;
@@ -35,9 +38,4 @@ create_home_layout <- function() {
     style = "background-color: #F8F9FA; padding: 20px; border-radius: 8px;
              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); max-width: 900px; margin: 0 auto; animation: fadeIn 1s ease-in-out;"
   )
-}
-
-# Fonction qui retourne le layout de la page d'accueil
-homePage <- function() {
-  create_home_layout()
 }

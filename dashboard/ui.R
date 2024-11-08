@@ -1,20 +1,20 @@
 # ui.R  
 
 
-# Importer le contenu de chaque page
-source("dashboard/pages/home_page.R")
-source("dashboard/pages/histogram_page.R")
-source("dashboard/pages/map_page.R")
+# Chargement des fichiers
+source("dashboard/pages/home_page.R")       # Fichier du contenu de la page d'accueil
+source("dashboard/pages/histogram_page.R")  # Fichier du contenu de la page des histogrammes
+source("dashboard/pages/map_page.R")        # Fichier du contenu de la page de la carte
 
-# Définir l'interface utilisateur
+# Définition de l'interface utilisateur
 ui <- navbarPage("Mon Dashboard",
                  
-                 # Page d'accueil
+                 # Création de la page d'accueil
                  tabPanel("Home", homePage()),
                  
-                 # Page Histogramme
+                 # Création de la page des histogrammes
                  tabPanel("Histogram", histogramPage()),
                  
-                 # Page Cartographie
+                 # Création de la page de la carte
                  tabPanel("Map", mapPage())
 )

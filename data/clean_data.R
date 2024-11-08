@@ -66,6 +66,3 @@ clean_data <- function() {
   write_csv(df_avg_taxiout_by_airport, 'data/clean/avg_taxiout_by_airport.csv')
   print("Résultat final enregistré avec succès.")
 }
-
-# Appel de la fonction pour exécuter le nettoyage
-clean_data()
