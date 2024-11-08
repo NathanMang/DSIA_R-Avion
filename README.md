@@ -3,21 +3,20 @@
 ## User Guide
 Pour déployer et utiliser ce dashboard sur une autre machine, suivez ces étapes :
 
-1. **Prérequis** :
-    - Installez les packages nécessaires en exécutant le code suivant dans la console R :
-     ```R
-     install.packages(c("shiny", "ggplot2", "dplyr", "tidyverse"))
-     ```
+1. **Cloner le dépôt** :
 
-2. **Téléchargement** :
-   - Clonez ou téléchargez ce dépôt sur votre machine.
+    cd cheminpourouvrirleprojet
+    
+    git clone https://git.esiee.fr/viellarl/project_nath_ludo_r.git
 
-3. **Exécution** :
-   - Ouvrez le fichier `app.R` dans RStudio.
-   - Exécutez le script en cliquant sur le bouton "Run App" en haut à droite de l'éditeur de script.
+2. **Installez les dépendances** : 
+    install.packages(readLines("requirements.txt"))
+
+3. **Lancer le dashboard** : 
+   Pour lancer le dashboard, ouvrez le fichier `app.R` dans RStudio et cliquez sur le bouton "Run App" en haut à droite.
+
 
 ## Data
-
 
 Le dashboard utilise plusieurs ensembles de données, incluant :
 
@@ -173,4 +172,36 @@ Ces résultats suggèrent que les compagnies aériennes pourraient optimiser leu
 
 
 ## Copyright
-Je déclare sur l'honneur que le code fourni a été produit par nous-même.
+Je déclare sur l'honneur que le code fourni a été produit par nous-même, à l’exception des lignes ci dessous par ChatGPT:
+
+_mutate(LOCID = str_trim(str_to_upper(LOCID)))_
+
+mutate() est une fonction qui permet de créer ou de modifier des colonnes dans un DataFrame
+str_trim() est une fonction qui supprime les espaces blancs au début et à la fin d'une chaîne de caractères.
+
+_summarise(
+      TaxiOut = round(mean(TaxiOut, na.rm = TRUE), 2),
+      LATITUDE = first(LATITUDE),
+      LONGITUDE = first(LONGITUDE)
+    ) %>%_
+
+summarise() est une fonction de dplyr qui permet de résumer (ou agréger) un DataFrame en fonction de certains calculs sur les colonnes.
+
+_tags$head(
+         tags$style(HTML("
+         .navbar {
+            font-size: 18px;         /* Taille de police augmentée */
+            display: flex;
+            justify-content: center;
+         }
+         .navbar-nav > li > a {
+            font-size: 18px;         /* Taille de police augmentée */
+            text-align: center;      /* Centrer le texte */
+            font-weight: bold;       /* Texte en gras (facultatif) */
+         }
+         "))
+      ),_
+   
+tags$head() permet d'ajouter des éléments dans la section head du document HTML généré
+tags$style() permet d'ajouter une balise style dans le HTML, qui est utilisée pour définir des styles CSS personnalisés.
+.navbar-nav > li > a est un sélecteur CSS qui cible les éléments a (les liens) dans les éléments li (les éléments de liste) qui se trouvent eux-mêmes dans un conteneur ayant la classe .navbar-nav
