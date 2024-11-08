@@ -3,21 +3,20 @@
 ## User Guide
 Pour déployer et utiliser ce dashboard sur une autre machine, suivez ces étapes :
 
-1. **Prérequis** :
-    - Installez les packages nécessaires en exécutant le code suivant dans la console R :
-     ```R
-     install.packages(c("shiny", "ggplot2", "dplyr", "tidyverse"))
-     ```
+1. **Cloner le dépôt** :
 
-2. **Téléchargement** :
-   - Clonez ou téléchargez ce dépôt sur votre machine.
+    cd cheminpourouvrirleprojet
+    
+    git clone https://git.esiee.fr/viellarl/project_nath_ludo_r.git
 
-3. **Exécution** :
-   - Ouvrez le fichier `app.R` dans RStudio.
-   - Exécutez le script en cliquant sur le bouton "Run App" en haut à droite de l'éditeur de script.
+2. **Installez les dépendances** : 
+    install.packages(readLines("requirements.txt"))
+
+3. **Lancer le dashboard** : 
+   Pour lancer le dashboard, ouvrez le fichier `app.R` dans RStudio et cliquez sur le bouton "Run App" en haut à droite.
+
 
 ## Data
-
 
 Le dashboard utilise plusieurs ensembles de données, incluant :
 
