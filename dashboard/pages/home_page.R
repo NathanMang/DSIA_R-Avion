@@ -4,7 +4,7 @@
 library(shiny)
 
 # Définition du contenu de la page d'accueil
-create_home_layout <- function() {
+homePage <- function() {
   fluidPage(
     
     # En-tête

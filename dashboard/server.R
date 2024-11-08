@@ -45,7 +45,7 @@ server <- function(input, output) {
     Flight_Delay <- read.csv("data/clean/Flight_Delay_Clean.csv")
     
     # Générer l'histogramme statique
-    create_histogram2(Flight_Delay)
+    create_histogram_type_delay(Flight_Delay)
   })
   
   # Texte pour l'histogramme de la plage de retards d'arrivée

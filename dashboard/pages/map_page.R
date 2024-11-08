@@ -5,7 +5,7 @@ library(shiny)
 library(leaflet)
 
 # Définition du contenu de la page de la carte
-create_map_layout <- function() {
+mapPage <- function() {
   fluidPage(
     
     # Titre de la page
@@ -34,7 +34,4 @@ create_map_layout <- function() {
   )
   
   
-}
-mapPage <- function() {
-  create_map_layout()
 }
