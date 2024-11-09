@@ -9,9 +9,9 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez ces étape
 
    Saisissez dans votre terminal:
 
-   cd cheminaccesdossier
-    
-   git clone https://git.esiee.fr/viellarl/project_nath_ludo_r.git
+      cd cheminaccesdossier
+      
+      git clone https://git.esiee.fr/viellarl/project_nath_ludo_r.git
 
 2. **Ouvrir le projet** : 
 
