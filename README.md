@@ -258,6 +258,8 @@ tags$head(
    
 ```
 
-"tags$head()" permet d'ajouter des éléments dans la section head du document HTML généré
+"tags$head()" permet d'ajouter des éléments dans la section head du document HTML généré.
+
 "tags$style()" permet d'ajouter une balise style dans le HTML, qui est utilisée pour définir des styles CSS personnalisés.
+
 ".navbar-nav > li > a" est un sélecteur CSS qui cible les éléments a (les liens) dans les éléments li (les éléments de liste) qui se trouvent eux-mêmes dans un conteneur ayant la classe .navbar-nav
