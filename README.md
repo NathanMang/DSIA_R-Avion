@@ -47,7 +47,7 @@ Ce guide vous permettra de comprendre l'architecture du projet et de vous aider 
 
 Architecture du Code:
 
-      www/ : Contient les ressources statiques de l'application (images)
+      www/ : Contient les ressources statiques de l'application (images) et les images du Readme
 
       dashboard/ : Regroupe tous les éléments liés au dashboard
 
