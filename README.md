@@ -130,11 +130,13 @@ Cet histogramme illustre la répartition des retards d'arrivée des vols aérien
 
 Chaque barre représente le nombre d'occurrences d'une durée de retard d'arrivée spécifique, mettant en évidence les retards les plus fréquents. Cette visualisation offre une vue d'ensemble sur la distribution des retards d'arrivée majeurs, permettant d’explorer leur impact sur la ponctualité des vols et d’identifier les plages de retard les plus récurrentes.
 
-![Description de l'image](www/histogramme_arr_delay.png)
+![Histogramme arrival delay](www/histogramme_arr_delay.png)
 
 _**Distribution des Retards par Compagnie Aérienne :**_
 
 Un histogramme dynamique a été conçu pour visualiser la répartition des retards parmi les différentes compagnies aériennes. Comme notre jeu de données se concentre uniquement sur les vols ayant subi des retards, le nombre de vols répertoriés par compagnie représente directement le nombre de vols en retard pour chaque compagnie. Cet histogramme est équipé d’un menu déroulant qui permet aux utilisateurs de sélectionner divers types de retards, offrant ainsi une vue plus détaillée sur les raisons des retards. Seules les occurrences de retards dépassant 15 minutes ont été considérées pour éviter de comptabiliser de légers décalages et se concentrer sur les délais significatifs.
+
+![Histogramme airline](www/histogramme_airline.png)
 
 **_Résultats observés pour les histogrammes :_**
 
