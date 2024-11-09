@@ -83,28 +83,6 @@ Architecture du Code:
 
       app.R : Point d'entrée principal de l'application Shiny, qui charge ui.R et server.R
 
-
-Architecture;
-    A[MYPROJECTLUDO] ;
-    A --> B[www];
-    A --> C[dashboard];
-    C --> D[components];
-    D --> D1[histogram_airline.R];
-    D --> D2[histogram_arr_delay.R];
-    D --> D3[histogram_type_delay.R];
-    D --> D4[map.R];
-    C --> E[pages];
-    E --> E1[histogram_page.R];
-    E --> E2[home_page.R];
-    E --> E3[map_page.R];
-    C --> F[ui.R];
-    C --> G[server.R];
-    A --> H[data];
-    H --> I[clean];
-    H --> J[raw];
-    H --> K[clean_data.R];
-    A --> L[app.R];
-
 ## Rapport d'analyse
 
 **Rapport d’Analyse des Données de Retards Aériens**
