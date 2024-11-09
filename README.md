@@ -51,7 +51,7 @@ www/ : Contient les ressources statiques de l'application (images)
 
 dashboard/ : Regroupe tous les éléments liés au dashboard
 
-      components/ : Contient les différents composants graphiques. Chaque fichier .R représente un graphique ou une fonctionnalité spécifique
+      components/ : Contient les différents composants graphiques
 
          histogram_airline.R : Fichier pour générer un premier histogramme dynamique sur compagnie aérienne
 
