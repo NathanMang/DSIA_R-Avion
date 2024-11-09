@@ -15,7 +15,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez ces étape
 
 2. **Ouvrir le projet** : 
 
-   Lancer RStudio et ouvrir le projet cloné dans votre dossier: File -> Open Project
+   Lancez RStudio et ouvrir le projet cloné dans votre dossier: File -> Open Project
 
 3. **Installez les dépendances** : 
 
