@@ -130,6 +130,7 @@ Cet histogramme illustre la répartition des retards d'arrivée des vols aérien
 
 Chaque barre représente le nombre d'occurrences d'une durée de retard d'arrivée spécifique, mettant en évidence les retards les plus fréquents. Cette visualisation offre une vue d'ensemble sur la distribution des retards d'arrivée majeurs, permettant d’explorer leur impact sur la ponctualité des vols et d’identifier les plages de retard les plus récurrentes.
 
+![Description de l'image](www/histogramme_arr_delay.png)
 
 _**Distribution des Retards par Compagnie Aérienne :**_
 
@@ -141,7 +142,7 @@ Pour l'histogramme "_Distribution des retards d’arrivée_" :
 
 Cet histogramme dynamique présente la répartition des retards d'arrivée des vols, en affichant toutes les occurrences de retards allant de 0 à 120 minutes. Toutefois, pour une analyse plus ciblée et afin d'éviter une surcharge d'informations, nous nous concentrons spécifiquement sur les plages de temps où le nombre d'occurrences est supérieur à 1000. Cette approche permet de se focaliser sur les retards les plus fréquents, offrant ainsi une vue plus claire des tendances principales dans les retards d'arrivée, tout en négligeant les cas moins significatifs. Grâce à l'interactivité de l'histogramme, l'utilisateur peut ajuster dynamiquement la plage de retards à afficher, offrant une analyse plus flexible et approfondie des données.
 
-Les résultats observés montrent une nette concentration des retards entre 0 et 23 minutes, avec un nombre d'occurrences supérieur à 10 000. Ensuite, les retards d’une durée de 24 à 30 minutes affichent un nombre d’occurrences compris entre 8 000 et 10 000. Enfin, pour des retards entre 31 et 38 minutes, le nombre d'occurrences se situe entre 6 000 et 8 000.
+Les résultats observés montrent une nette concentration des retards entre 15 et 23 minutes, avec un nombre d'occurrences supérieur à 10 000. Ensuite, les retards d’une durée de 24 à 30 minutes affichent un nombre d’occurrences compris entre 8 000 et 10 000. Enfin, pour des retards entre 31 et 38 minutes, le nombre d'occurrences se situe entre 6 000 et 8 000.
 
 Cette répartition démontre que la majorité des retards d’arrivée se concentre dans des délais courts, bien que certains retards plus longs restent significatifs. Cette visualisation met en relief les retards d’arrivée les plus fréquents et permet de mieux comprendre leur répartition, fournissant ainsi une base utile pour des stratégies d'optimisation visant à réduire ces retards significatifs.
 
