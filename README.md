@@ -51,27 +51,27 @@ www/ : Contient les ressources statiques de l'application (images)
 
 dashboard/ : Regroupe tous les éléments liés au dashboard
 
-   components/ : Contient les différents composants graphiques. Chaque fichier .R représente un graphique ou une fonctionnalité spécifique
+      components/ : Contient les différents composants graphiques. Chaque fichier .R représente un graphique ou une fonctionnalité spécifique
 
-      histogram_airline.R : Fichier pour générer un premier histogramme dynamique sur compagnie aérienne
+         histogram_airline.R : Fichier pour générer un premier histogramme dynamique sur compagnie aérienne
 
-      histogram_arr_delay.R : Fichier pour générer un deuxième histogramme dynamique sur les retards à l'arrivée
+         histogram_arr_delay.R : Fichier pour générer un deuxième histogramme dynamique sur les retards à l'arrivée
 
-      histogram_type_delay.R : Fichier pour générer un troisième histogramme statique par type de retard
-      
-      map.R : Fichier pour générer la carte
+         histogram_type_delay.R : Fichier pour générer un troisième histogramme statique par type de retard
+         
+         map.R : Fichier pour générer la carte
 
-   pages/ : Contient les pages du dashboard
+      pages/ : Contient les pages du dashboard
 
-      histogram_page.R : Définition de la mise en page pour la page d'accueil
+         histogram_page.R : Définition de la mise en page pour la page d'accueil
 
-      home_page.R : Définition de la mise en page pour la page d'accueil
+         home_page.R : Définition de la mise en page pour la page d'accueil
 
-      map_page.R : Définition de la mise en page pour la page de la carte
+         map_page.R : Définition de la mise en page pour la page de la carte
 
-   ui.R : Définit l'interface utilisateur de l'application
+         ui.R : Définit l'interface utilisateur de l'application
 
-   server.R : Contient la logique serveur de l'application
+         server.R : Contient la logique serveur de l'application
 
 data/ : Stocke les données utilisées par le projet
 
