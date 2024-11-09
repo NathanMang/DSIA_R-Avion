@@ -7,19 +7,19 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez ces étape
 
    Créer un dossier pour récupérer le projet
 
-   Saisissez dans votre terminal :
+   Placez vous au niveau du dossier et clonez le projet en saisissant dans votre terminal :
 
-         cd cheminaccesdossier
+         cd 'chemindudossier'
          
          git clone https://git.esiee.fr/viellarl/project_nath_ludo_r.git
 
 2. **Ouvrir le projet** : 
 
-   Lancer RStudio et ouvrir le projet cloner dans votre dossier: File -> Open Project
+   Lancer RStudio et ouvrir le projet cloné dans votre dossier: File -> Open Project
 
 3. **Installez les dépendances** : 
 
-   Tapez la ligne de commande suivante dans la console:
+   Installez les dépendances en saisissant la ligne de commande suivante dans la console:
 
          install.packages(readLines("requirements.txt"))
 
