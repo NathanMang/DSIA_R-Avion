@@ -190,6 +190,8 @@ _**Visualisation Géographique des Délais de Décollage (TaxiOut) :**_
 
 Pour mieux comparer l'efficacité des aéroports à gérer le traffic des avions au sol, une carte choroplèthe a été développée. Cette carte utilise une échelle de couleur allant du vert (délais de taxi inférieurs à 15 minutes) au rouge (délais de taxi supérieurs à 30 minutes). Elle est enrichie par une légende et des infobulles indiquant la durée moyenne entre la fin d'embarquement et le décollage pour chaque aéroport, permettant une vue d'ensemble géographique et une identification rapide des aéroports ayant un manque de gestion importants.
 
+![carte](www/carte.png)
+
 _**Résultats observés pour la carte choroplèthe :**_
 
 La carte choroplèthe développée pour visualiser les délais moyens de décollage (TaxiOut) révèle des disparités géographiques marquées dans les performances des aéroports à travers les États-Unis. Voici les principaux résultats :
