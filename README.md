@@ -83,7 +83,7 @@ Architecture du Code:
 
       app.R : Point d'entrée principal de l'application Shiny, qui charge ui.R et server.R
 
-```mermaid
+
 Architecture;
     A[MYPROJECTLUDO] ;
     A --> B[www];
@@ -104,7 +104,7 @@ Architecture;
     H --> J[raw];
     H --> K[clean_data.R];
     A --> L[app.R];
-```
+
 ## Rapport d'analyse
 
 **Rapport d’Analyse des Données de Retards Aériens**
