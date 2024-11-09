@@ -21,7 +21,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez ces étape
 
    Tapez la ligne de commande suivante dans la console:
 
-      install.packages(readLines("requirements.txt"))
+         install.packages(readLines("requirements.txt"))
 
 4. **Lancer le dashboard** : 
 
