@@ -43,12 +43,45 @@ Le dashboard utilise plusieurs ensembles de données, incluant :
 
 ## Developer Guide
 
+Ce guide vous permettra de comprendre l'architecture du projet et de vous aider à ajouter facilement de nouvelles pages ou de nouveaux graphiques au dashboard.
 
+Architecture du Code:
 
+www/ : Contient les ressources statiques de l'application (images)
 
+dashboard/ : Regroupe tous les éléments liés au dashboard
 
+   components/ : Contient les différents composants graphiques. Chaque fichier .R représente un graphique ou une fonctionnalité spécifique
 
+      histogram_airline.R : Fichier pour générer un premier histogramme dynamique sur compagnie aérienne
 
+      histogram_arr_delay.R : Fichier pour générer un deuxième histogramme dynamique sur les retards à l'arrivée
+
+      histogram_type_delay.R : Fichier pour générer un troisième histogramme statique par type de retard
+      
+      map.R : Fichier pour générer la carte
+
+   pages/ : Contient les pages du dashboard
+
+      histogram_page.R : Définition de la mise en page pour la page d'accueil
+
+      home_page.R : Définition de la mise en page pour la page d'accueil
+
+      map_page.R : Définition de la mise en page pour la page de la carte
+
+   ui.R : Définit l'interface utilisateur de l'application
+
+   server.R : Contient la logique serveur de l'application
+
+data/ : Stocke les données utilisées par le projet
+
+      clean/ : Données nettoyées et prêtes pour l'analyse
+
+      raw/ : Données brutes
+
+      clean_data.R : Script pour nettoyer et préparer les données
+
+app.R : Point d'entrée principal de l'application Shiny, qui charge ui.R et server.R
 
 ## Rapport d'analyse
 
