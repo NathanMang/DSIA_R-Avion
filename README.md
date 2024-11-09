@@ -222,7 +222,9 @@ En conclusion, cette étude fournit une base solide pour une stratégie de rédu
 ## Copyright
 Je déclare sur l'honneur que le code fourni a été produit par nous-même, à l’exception des lignes ci dessous par ChatGPT:
 
-```mutate(LOCID = str_trim(str_to_upper(LOCID)))```
+```
+mutate(LOCID = str_trim(str_to_upper(LOCID)))
+```
 
 mutate() est une fonction qui permet de créer ou de modifier des colonnes dans un DataFrame
 str_trim() est une fonction qui supprime les espaces blancs au début et à la fin d'une chaîne de caractères.
